@@ -101,6 +101,8 @@
                 suffix = 'Kit'
             } else if (role == 'Leader') {
                 suffix = 'Star'
+            } else {
+                suffix = suffixes[Math.floor(Math.random() * suffixes.length)]
             }
 
             document.getElementById('prefixDisplay').innerHTML = prefix;
