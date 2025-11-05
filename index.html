@@ -83,7 +83,7 @@
 
     <script>
         let prefixes = ['Lily', 'Golden', 'Tiger', 'Fire', 'River', 'Yellow', 'Blaze', 'Ghost', 'Arch', 'Dawn', 'Dusk', 'Viper'];
-        let suffixes = [''];
+        let suffixes = ['Wing', 'Break', 'Rod', 'Fang', 'Claw', 'Talon', 'Rose', 'Eye', 'Bird', 'Omen', 'Storm', 'Rattle'];
         let roles = ['Leader', 'Deputy', 'Senior Warrior', 'Elder', 'Warrior', 'Apprentince', 'Kit', 'Queen', 'Medicine Cat', 'Medicine Apprentince', 'Starclan Cat', 'Darkforest Cat'];
 
         let prefix;
@@ -94,6 +94,14 @@
             prefix = prefixes[Math.floor(Math.random() * prefixes.length)]
             suffix = suffixes[Math.floor(Math.random() * suffixes.length)]
             role = roles[Math.floor(Math.random() * roles.length)]
+
+            if (role == 'Apprentince' || role == 'Medicine Apprentince') {
+                suffix = 'Paw'
+            } else if (role == 'Kit') {
+                suffix = 'Kit'
+            } else if (role == 'Leader') {
+                suffix = 'Star'
+            }
 
             document.getElementById('prefixDisplay').innerHTML = prefix;
             document.getElementById('suffixDisplay').innerHTML = suffix;
