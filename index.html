@@ -91,10 +91,13 @@
         let role;
 
         function generateName() {
-            prefix = prefixes[Math.floor(Math.random() * roles.length + 1)]
-            role = roles[Math.floor(Math.random() * roles.length)]
+            prefix = prefixes[Math.floor(Math.random() * prefixes.length + 1)]
+            suffix = suffixes[Math.floor(Math.random() * suffixes.length + 1)]
+            role = roles[Math.floor(Math.random() * roles.length + 1)]
 
-            document.getElementById('roleDisplay').innerHTML = role
+            document.getElementById('prefixDisplay').innerHTML = prefix;
+            document.getElementById('suffixDisplay').innerHTML
+            document.getElementById('roleDisplay').innerHTML = role;
         }
     </script>
 </body>
