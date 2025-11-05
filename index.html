@@ -91,9 +91,9 @@
         let role;
 
         function generateName() {
-            prefix = prefixes[Math.floor(Math.random() * prefixes.length + 1)]
-            suffix = suffixes[Math.floor(Math.random() * suffixes.length + 1)]
-            role = roles[Math.floor(Math.random() * roles.length + 1)]
+            prefix = prefixes[Math.floor(Math.random() * prefixes.length)]
+            suffix = suffixes[Math.floor(Math.random() * suffixes.length)]
+            role = roles[Math.floor(Math.random() * roles.length)]
 
             document.getElementById('prefixDisplay').innerHTML = prefix;
             document.getElementById('suffixDisplay').innerHTML = suffix;
