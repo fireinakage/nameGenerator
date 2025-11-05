@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Warrior Cats: Name and Role Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+        body {
+            font-family: "Comic Relief", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            background: #f1e3c5;
+            color: #5c4d3e;
+            text-align: center;
+        }
+
+        h1 {
+            background: white;
+            text-align: center;
+            font-size: 50px;
+            padding: 25px;
+            margin: 10px;
+            border-radius: 25px;
+        }
+
+        div {
+            font-weight: 400;
+            font-size: 25px;
+            margin-left: 25px;
+        }
+
+        .label {
+            font-weight: 700;
+        }
+
+        #prefixDisplay, #suffixDisplay, #roleDisplay {
+            display: inline;
+            margin-left: 1px;
+        }
+
+        button {
+            margin: 10px;
+            font-size: 25px;
+            background: rgb(255, 242, 223);
+            border: none;
+            font-family: "Comic Relief", system-ui;
+            font-weight: 700;
+            font-style: normal;
+            padding: 10px;
+            border-radius: 25px;
+            color: #5c4d3e;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        button:active {
+            background: white
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Warrior Cats: Name and Role Generator</h1>
+
+    <div class="label">
+        Prefix:
+        <div id="prefixDisplay">wqwqw</div>
+    </div>
+    <div class="label">
+        Suffix:
+        <div id="suffixDisplay">qwqwqw</div>
+    </div>
+    <div class="label">
+        Role:
+        <div id="roleDisplay">qwqwqw</div>
+    </div>
+    <div>
+        CharacterName is a RoleName
+    </div>
+    <button onclick="generateName()">Generate a Name</button>
+
+    <script>
+        let prefixes = ['Lily', 'Golden', 'Tiger', 'Fire', 'River', 'Yellow', 'Blaze', 'Ghost', 'Arch', 'Dawn', 'Dusk', 'Viper'];
+        let suffixes = [''];
+        let roles = ['Leader', 'Deputy', 'Senior Warrior', 'Elder', 'Warrior', 'Apprentince', 'Kit', 'Queen', 'Medicine Cat', 'Medicine Apprentince', 'Starclan Cat', 'Darkforest Cat'];
+
+        let prefix;
+        let suffix;
+        let role;
+
+        function generateName() {
+            prefix = prefixes.indexOf[Math.floor(Math.random() * roles.length + 1)]
+            role = roles.indexOf[Math.floor(Math.random() * roles.length)]
+
+            document.getElementById('roleDisplay').innerHTML = role
+        }
+    </script>
+</body>
+</html>
