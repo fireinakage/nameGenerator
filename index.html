@@ -109,7 +109,11 @@
             document.getElementById('suffixDisplay').innerHTML = suffix;
             document.getElementById('roleDisplay').innerHTML = role;
 
-            document.getElementById('character').innerHTML = prefix + suffix + ' is a ' + role
+            if (role == 'Elder' || role == 'Apprentince') {
+                document.getElementById('character').innerHTML = prefix + suffix + ' is an ' + role
+            } else {
+                document.getElementById('character').innerHTML = prefix + suffix + ' is a ' + role 
+            }
         }
     </script>
 </body>
