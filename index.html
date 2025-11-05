@@ -76,7 +76,7 @@
         Role:
         <div id="roleDisplay">qwqwqw</div>
     </div>
-    <div>
+    <div id='character'>
         CharacterName is a RoleName
     </div>
     <button onclick="generateName()">Generate a Name</button>
@@ -98,6 +98,8 @@
             document.getElementById('prefixDisplay').innerHTML = prefix;
             document.getElementById('suffixDisplay').innerHTML = suffix;
             document.getElementById('roleDisplay').innerHTML = role;
+
+            document.getElementById('character').innerHTML = prefix + suffix + ' is a ' + role
         }
     </script>
 </body>
