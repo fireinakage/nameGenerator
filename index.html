@@ -33,7 +33,9 @@
             font-weight: 700;
         }
 
-        #prefixDisplay, #suffixDisplay, #roleDisplay {
+        #prefixDisplay,
+        #suffixDisplay,
+        #roleDisplay {
             display: inline;
             margin-left: 1px;
         }
@@ -82,18 +84,67 @@
     <button onclick="generateName()">Generate a Name</button>
 
     <script>
-        let prefixes = ['Lily', 'Golden', 'Tiger', 'Fire', 'River', 'Yellow', 'Blaze', 'Ghost', 'Arch', 'Dawn', 'Dusk', 'Viper', 'Sage', 'Ceader', 'Hawk', 'Eagle' ];
-        let suffixes = ['Wing', 'Break', 'Rod', 'Fang', 'Claw', 'Talon', 'Rose', 'Eye', 'Bird', 'Omen', 'Storm', 'Rattle', 'Bay', 'Badger', 'Crest', 'Thorn'];
+        let prefixes =  [
+            'Alder', 'Arch', 'Ash',
+            'Blaze', 'Bracken', 'Bramble', 'Bird',
+            'Ceader', 'Crow', 'Coyote', 'Clover',
+            'Dawn', 'Dusk', 
+            'Eagle', 'Echo', 'Envy',
+            'Fire', 'Fox', 'Fawn', 'Fern', 'Fog', 'Frost',
+            'Ghost', 'Golden', 
+            'Hawk', 'Holly', 'Hornet', 'Heron', 'Hare',
+            'Indigo', 'Ivory',
+            'Kestrel', 'Koi',
+            'Lily', 'Little', 'Lake', 'Leopard', 'Lion',
+            'Mist', 
+            'Onyx', 'Opal', 'Oak',
+            'Patch',
+            'Raven', 'River', 
+            'Sage', 'Silent', 'Snow', 'Spotted', 'Swan',
+            'Tawny', 'Tiger', 'Thistle', 'Thorn', 'Thunder', 'Turtle',
+            'Umber',
+            'Viper', 'Vixen', 'Vole', 
+            'White', 'Wolf', 'Whisper',
+            'Yellow',
+        ];
+        let suffixes = [
+            'Amber', 'Antler',
+            'Badger', 'Bay', 'Bird', 'Break', 'Blood', 'Bane',
+            'Claw', 'Crest', 
+            'Dream', 'Drift', 'Dust', 'Dancer',
+            'Eye', 'Echo',
+            'Fang', 'Fur', 'Foot', 'Flower', 'Furry', 'Fog', 'Flare',
+            'Glide', 'Glare', 'Growl',
+            'Hail', 'Haze', 'Heart', 'Hollow', 'Hope', 'Hill',
+            'Ice', 
+            'Leap', 'Light', 
+            'Moon', 'Moss', 'Mask',
+            'Needle', 'Nettle',
+            'Omen', 
+            'Pelt', 'Pebble',
+            'Quick',
+            'Rattle', 'Rod', 'Rose', 'Runner', 'Rush',
+            'Storm', 'Stream', 'Strike', 'Spirit', 'Shade', 'Spring', 'Stem', 'Swan',
+            'Talon', 'Thorn', 'Tail',
+            'Wing', 'Whisker', 'Watcher', 'Whipser',
+        ];
         let roles = ['Leader', 'Deputy', 'Senior Warrior', 'Elder', 'Warrior', 'Apprentince', 'Kit', 'Queen', 'Medicine Cat', 'Medicine Apprentince', 'Starclan Cat', 'Darkforest Cat'];
 
         let prefix;
         let suffix;
         let role;
 
+
+        function reGenName() {
+            generateName()
+        }
+        
         function generateName() {
             prefix = prefixes[Math.floor(Math.random() * prefixes.length)]
             suffix = suffixes[Math.floor(Math.random() * suffixes.length)]
             role = roles[Math.floor(Math.random() * roles.length)]
+            
+            
 
             if (role == 'Apprentince' || role == 'Medicine Apprentince') {
                 suffix = 'Paw'
@@ -112,21 +163,36 @@
             if (role == 'Elder' || role == 'Apprentince') {
                 document.getElementById('character').innerHTML = prefix + suffix + ' is an ' + role
             } else {
-                document.getElementById('character').innerHTML = prefix + suffix + ' is a ' + role 
+                document.getElementById('character').innerHTML = prefix + suffix + ' is a ' + role
             };
+
+            if (prefix == suffix) {
+                reGenName()
+                console.log('Regenerating name. . .')
+            }
         };
 
-        window.onload = function() {
+        window.onload = function () {
             generateName();
-            console.log(` __      ________ _____   _____ _____ ____  _   _     __        ___  
- \ \    / /  ____|  __ \ / ____|_   _/ __ \| \ | |   /_ |      / _ \ 
-  \ \  / /| |__  | |__) | (___   | || |  | |  \| |    | |     | | | |
-   \ \/ / |  __| |  _  / \___ \  | || |  | | . ` |    | |     | | | |
-    \  /  | |____| | \ \ ____) |_| || |__| | |\  |    | |  _  | |_| |
-     \/   |______|_|  \_\_____/|_____\____/|_| \_|    |_| (_)  \___/ 
-                                                                     
-                                                                     `)
+            console.log(`
+            ██    ██ ███████ ██████  ███████ ██  ██████  ███    ██              ██             ██████  
+            ██    ██ ██      ██   ██ ██      ██ ██    ██ ████   ██             ███            ██  ████ 
+            ██    ██ █████   ██████  ███████ ██ ██    ██ ██ ██  ██              ██            ██ ██ ██ 
+             ██  ██  ██      ██   ██      ██ ██ ██    ██ ██  ██ ██              ██            ████  ██ 
+              ████   ███████ ██   ██ ███████ ██  ██████  ██   ████              ██     ██      ██████  
+                                                                                           
+                                                                                           `)
+            console.log(`
+        - Added Suffixes
+        - Added Prefixes
+
+    Total Prefixes: ${prefixes.length}
+    Total Suffixes: ${suffixes.length}
+    Total Roles: ${roles.length}
+        `)
         };
+
     </script>
 </body>
+
 </html>
